@@ -5,9 +5,28 @@ Hier befindet sich aller Code, den ich für das Projekt Brainhome 1.0 bis jetzt 
 Hier befindet sich der Code für:
 - den MaxViT + Code zum Trainieren (in MaxViT/MaxDaVit, trainierte Parameter: MaxVit11.pt)
 - Data-Processing (in Dataset/Dataset.py)
-- ein Programm welches die Inference simuliert (in Inference.py)
 - Zwei Test-Notebooks um diese beiden zu testen (in Testing) 
     - diese befinden sich eigentlich woanders -->funktionieren hier nicht, aber man kann die Eingaben und Ausgaben sehen
+- ein Programm welches die Inference simuliert (in Inference.py)
+### Anleitung Benutzen der Inference Simulation:
+Mit Python und zu installierenden Modulen:
+1. Repository klonen
+2. alle Module in requirements.txt müssen installiert sein
+3. dann den Befehl: **python KI/Inference.py** aus der root directory ausführen, also: BWKI23
+4. hier dauert es dann etwas
+5. nach Nachfrage die erste Zahl für die Teilnehmer-Nummer der Physionet Studie eingeben und dann die gewünschte Zahl der Aufnahme (Zahl von 1-109 und 1-14), getrennt durch Enter
+6. nun wird nach und nach das Modell auf 15 Fenster einer Datenreihe angewandt und die Lösung als y_pred und die tatsächliche Klasse als y angegeben
+7. am Ende wird das erste Fenster der ersten 10 Datenreihen noch in matotlib angezeigt
+
+Mit Docker (hier funktioniert jeodoch Matplotlib nicht bzw ich habe nicht den richtigen Befehl gefunden um eine GUI anzeigen zu lassen)
+1. Docker muss hirfür installiert sein
+2. Docker Image von https://hub.docker.com/r/jonathanreinhart/bwki23 klonen
+3. **docker run -ti jonathanreinhart/bwki23** in root ausführen
+4. wie oben Eingabe tätigen
+
+Achtung: Das Docker-Image ist sehr groß: ca 8GB
+
+
 
 ## 2. Arduino (Ordner Arduino)
 Hier befindet sich der Code für:
@@ -45,7 +64,9 @@ Diese befindet sich in einem anderen Repository: https://github.com/jonathanrein
 
 ## Quellen
 Vergleichspaper: https://doi.org/10.1016/j.eswa.2021.115968
+
 MaxVit: https://arxiv.org/abs/2204.01697
+
 Datensatz: Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). 
 PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. 
 Circulation [Online]. 101 (23), pp. e215–e220.
