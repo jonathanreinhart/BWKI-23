@@ -1,0 +1,10 @@
+numpy
+mne
+matplotlib
+torch
+scikit-learn
+einops
+typing
+torchinfo
+tensorboard
+timm

@@ -1,3 +1,9 @@
+# nach: https://arxiv.org/abs/2204.01697
+# Datensatz: Schalk, G., McFarland, D.J., Hinterberger, 
+# T., Birbaumer, N., Wolpaw, J.R. BCI2000: A General-Purpose 
+# Brain-Computer Interface (BCI) System. IEEE Transactions on 
+# Biomedical Engineering 51(6):1034-1043, 2004.
+
 from typing import Tuple
 
 import torch

@@ -25,14 +25,27 @@ Web-Editor-Ansicht: https://easyeda.com/editor#project_id=8a6bf672870946c99ba875
 ## 5. Abbildungen (Ordner Abbildungen):
 Beschreibung:
 
-    BeispielDaten: 5s von Daten (und die Frequenzen) die von der selbstenwickelten Hardware aufgenommen wurden (oben ungefiltert, unten gefiltert)
+EEGOverView: Allgemeiner Überblick wie er auch im Pitch gezeigt wurde.
 
-    Boardx: Prototypen-Boards, bei 3 gibt es ein ADC-Baord (groß), und ein reines Verstärkungs-Board (klein)
+BeispielDaten: 5s von Daten (und die Frequenzen) die von der selbstenwickelten Hardware aufgenommen wurden (oben ungefiltert, unten gefiltert)
 
-    Elektrode: die eigenentwickelte Elektrode
+Boardx: Prototypen-Boards, bei 3 gibt es ein ADC-Baord (groß), und ein reines Verstärkungs-Board (klein)
 
-    EEGKappe: die eigenentwickelte EEG Kappe
+Elektrode: die eigenentwickelte Elektrode
 
-    ConfMatrix/W: Einmal die ConfMatrix bei der Klassifikation auf ein Fenster, und auf 15 Fenster
+EEGKappe: die eigenentwickelte EEG Kappe
 
-    PrecisionRecall/W: '' Precision-Recall-Curve ''
+ConfMatrix/W: Einmal die ConfMatrix bei der Klassifikation auf ein Fenster, und auf 15 Fenster
+
+PrecisionRecall/W: '' Precision-Recall-Curve ''
+
+## 6. App für Handy (noch nicht fertig)
+Diese befindet sich in einem anderen Repository: https://github.com/jonathanreinhart/brainhome
+
+
+## Quellen
+Vergleichspaper: https://doi.org/10.1016/j.eswa.2021.115968
+MaxVit: https://arxiv.org/abs/2204.01697
+Datensatz: Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). 
+PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. 
+Circulation [Online]. 101 (23), pp. e215–e220.
