@@ -6,7 +6,7 @@ Hier befindet sich der Code für:
 - den MaxViT + Code zum Trainieren (in MaxViT/MaxDaVit, trainierte Parameter: MaxVit11.pt)
 - Data-Processing (in Dataset/Dataset.py)
 - Zwei Test-Notebooks um diese beiden zu testen (in Testing) 
-    - diese befinden sich eigentlich woanders -->funktionieren hier nicht, aber man kann die Eingaben und Ausgaben sehen
+    - diese befinden sich eigentlich woanders --> funktionieren in diesem Repo nicht, aber man kann die Eingaben und Ausgaben sehen
 - ein Programm welches die Inference simuliert (in Inference.py)
 ### Anleitung Benutzen der Inference Simulation:
 Mit Python und zu installierenden Modulen:
@@ -48,7 +48,7 @@ EEGOverView: Allgemeiner Überblick wie er auch im Pitch gezeigt wurde.
 
 BeispielDaten: 5s von Daten (und die Frequenzen) die von der selbstenwickelten Hardware aufgenommen wurden (oben ungefiltert, unten gefiltert)
 
-Boardx: Prototypen-Boards, bei 3 gibt es ein ADC-Baord (groß), und ein reines Verstärkungs-Board (klein)
+Boardx: Prototypen-Boards, bei 3 gibt es ein ADC-Baord (31, groß), und ein reines Verstärkungs-Board (30, klein)
 
 Elektrode: die eigenentwickelte Elektrode
 
