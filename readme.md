@@ -1,6 +1,9 @@
 # Code für BWKI 2023
 Hier befindet sich aller Code, den ich für das Projekt Brainhome 1.0 bis jetzt entwickelt habe.
 
+## Posterrefenzen
+sh. [PosterReferenzen](PosterReferenzen.md)
+
 ## 1. KI (Ordner KI)
 Hier befindet sich der Code für:
 - den MaxViT + Code zum Trainieren (in MaxViT/MaxDaVit, trainierte Parameter: MaxVit11.pt)
