@@ -2,6 +2,7 @@ import mne
 from MaxViT.MaxDaVit import MaxDaViT
 import torch
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
 import numpy as np
 import requests
 
@@ -78,7 +79,7 @@ def get_classes_for_seqs(data_edf,run):
     y_seqs = y_seqs.expand(610)
 
   # window the data with 75% overlapping windows
-  x_seqs = x_seqs.unfold(2, 160, 40).transpose(1,2).transpose(2,3)
+  x_seqs = x_seqs.unfold(2, 160, 610).transpose(1,2).transpose(2,3)
 
   return x_seqs,y_seqs
 
@@ -112,11 +113,14 @@ classes = ["rest", "left fist", "both fists", "right fist", "both feet"]
 
 fig = plt.figure(figsize=(15,8))
 fig.suptitle(file_path)
-for i in range(1, 11):
-    fig.add_subplot(2, 5, i)
-    plt.imshow(x_seqs[i][0])
-    plt.title(classes[y_seqs[i].cpu().numpy()])
-    plt.axis("off")
+
+print(x_seqs.shape, y_seqs.shape)
+
+font = {'family': 'Calibri',
+        'weight': 'normal',
+        'size': 20}
+
+plt.rc('font', **font)
 
 j = 0
 for x,y in zip(x_seqs,y_seqs):
@@ -126,6 +130,36 @@ for x,y in zip(x_seqs,y_seqs):
     print(f"image {j}: ")
     print(f"y_pred: {classes[y_pred.cpu().numpy()[0]]}, y: {classes[y.cpu().numpy()[0]]}")
     print("-----------------------------------")
+    
+    # plot the first 14 images
+    # mark red if the prediction is wrong, green if it is correct
+    fig.add_subplot(2, 7, j+1)
+    plt.imshow(x_seqs[j][0])
+    
+    if(y_pred.cpu().numpy()[0] != y.cpu().numpy()[0]):
+        plt.title(classes[y_pred.cpu().numpy()[0]], color="red")
+    else:
+        plt.title(classes[y_pred.cpu().numpy()[0]], color="green")
+    
+    plt.axis("off")
+    
     j += 1
+    
+    if(j == 14):
+        plt.show()
+        j = 0
+        fig = plt.figure(figsize=(15,8))
+        fig.suptitle(file_path)
+
+# plot the first 10 images
+# mark red if the prediction is wrong, green if it is correct
+
+# fig = plt.figure(figsize=(15,8))
+# fig.suptitle(file_path)
+# for i in range(1, 11):
+#     fig.add_subplot(2, 5, i)
+#     plt.imshow(x_seqs[i][0])
+#     plt.title(classes[y_seqs[i].cpu().numpy()])
+#     plt.axis("off")
 
 plt.show()
